@@ -28,14 +28,12 @@ public class GFG {
     }
 }
 
-// } Driver Code Ends
-
-
+// } Driver Code End
 //User function Template for Java
 
 class Solution {
     int findMaxAverage(int[] arr, int n, int k) {
-        // code here
+
         if(k>n) return -1;
         int [] sum = new int[n];
         sum[0] = arr[0];
