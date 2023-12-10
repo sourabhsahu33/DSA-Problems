@@ -45,13 +45,19 @@ class Solution{
     static boolean findsum(int arr[],int n)
     {
         //Your code here
+        HashSet<Integer> set =new HashSet<>();
+        int pref_sum = 0;
         for(int i=0; i<n; i++){
-            int curr_sum = 0;
-            for(int j=i; j<n; j++){
-                curr_sum += arr[j];
-                if(curr_sum == 0)
+            pref_sum += arr[i];
+            
+            if(pref_sum == 0) return true;
+            
+             if(set.contains(pref_sum)){
                 return true;
             }
+            
+            set.add(pref_sum);
+    
         }
         return false;
     }
