@@ -124,27 +124,24 @@ class Node
     }
 }
 */
-class Solution {
-    // Function to return the level order traversal of a tree.
-    static ArrayList<Integer> levelOrder(Node node) {
-        ArrayList<Integer> list = new ArrayList<>();
-        if (node == null) return list;
-
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(node);
-
-        while (!queue.isEmpty()) {
-            Node currNode = queue.poll();
-            list.add(currNode.data);
-
-            if (currNode.left != null) queue.add(currNode.left);
-            if (currNode.right != null) queue.add(currNode.right);
-        }
-
-        return list;
+class Solution
+{
+    //Function to return the level order traversal of a tree.
+    static ArrayList <Integer> levelOrder(Node root) 
+    {
+       ArrayList<Integer> list = new ArrayList<>();
+       if(root == null) return list;
+       Queue<Node> q = new LinkedList<>();
+       q.add(root);
+       while(!q.isEmpty()){
+           Node curr = q.poll();
+           list.add(curr.data);
+           if(curr.left != null) q.offer(curr.left);
+           if(curr.right != null) q.offer(curr.right);
+       }
+       return list;
     }
 }
-
 
 
 
